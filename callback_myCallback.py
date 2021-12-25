@@ -9,7 +9,7 @@ import tensorflow as tf
 # 모델이 99퍼센트 이상의 정확도를 가질 때, 학습 멈추기.
 class myCallback(tf.keras.callbacks.Callback):
     def on_epoch_end(self, epoch, logs = {}):
-        if logs.get('accuracy') > 0.99 :
+        if logs.get('val_accuracy') > 0.99 :
             print('\n 정확도가 99% 이상이면, 학습을 멈춘다.')
             self.model.stop_training = True
 
