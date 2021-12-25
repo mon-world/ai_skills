@@ -19,3 +19,13 @@ callback은 tensorflow.keras.callbacks의 ModelCheckpoint를 사용했습니다.
 
 ModelCheckpoint가 받는 인자를 설명하였고,
 model.fit을 할 때, callbacks가 인자로 들어가는 코드도 넣었습니다.
+
+## 3. epochs 달성 전 학습 종료(EarlyStopping 사용) : Early_stopping.py
+Early_stopping.py에는 모델이 일정 이상 개선되지 않을 때, 더이상 모델을 학습시키지 않고 종료하는 코드가 들어있습니다.
+
+모델을 학습 시키는 경우, 과적합으로 인해 overfitting 문제가 일어납니다.
+overfitting은 train 데이터에 대해 정확도가 올라가지만, test나 validation 데이터에 대해 정확도가 오르지 않는 경우입니다.
+따라서 이러한 상황이 학습이 진행됨에 따라 나타나는 경우, 모두 학습하기 전에 학습을 멈추는 기법이 Early stopping 입니다.
+
+EarlyStopping이 받는 인자를 설명하였고,
+model.fit을 할 때, EarlyStopping이 인자로 들어가는 코드도 넣었습니다.
