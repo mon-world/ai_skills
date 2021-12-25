@@ -29,3 +29,13 @@ overfitting은 train 데이터에 대해 정확도가 올라가지만, test나 v
 
 EarlyStopping이 받는 인자를 설명하였고,
 model.fit을 할 때, EarlyStopping이 인자로 들어가는 코드도 넣었습니다.
+
+## 4. 정확도가 일정 이상일 때 학습 종료 : callback_myCallback.py
+callback_myCallback.py에는 모델의 정확도가 일정 이상일 때, 학습을 종료하는 코드입니다.
+tensorflow.keras.callbacks의 Callback을 사용했습니다.
+
+자신이 원하는 정확도에서 학습을 종료시킬 수 있습니다.
+myCallback 이라는 함수를 만들고, val_accuracy가 설정한 값 이상이면, 학습을 멈추는 코드입니다.
+
+class로 myCallback을 선언하였고, 그 안에 val_accuracy가 나올떄마다 판단하는 코드를 넣었습니다.
+
