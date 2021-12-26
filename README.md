@@ -39,3 +39,7 @@ myCallback 이라는 함수를 만들고, val_accuracy가 설정한 값 이상�
 
 class로 myCallback을 선언하였고, 그 안에 val_accuracy가 나올떄마다 판단하는 코드를 넣었습니다.
 
+## 5. 이미지 증강 : ImageDataGenerator.py
+ImageDataGenerator.py에는 training data가 부족하거나, 늘리고 싶을 때, 사용하는 기법입니다.
+이미지를 회전시키거나, 선대칭, 수평 및 수직 이동 시킴으로써 training data를 늘려줍니다.
+
