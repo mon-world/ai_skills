@@ -43,3 +43,14 @@ class로 myCallback을 선언하였고, 그 안에 val_accuracy가 나올떄마�
 ImageDataGenerator.py에는 training data가 부족하거나, 늘리고 싶을 때, 사용하는 기법입니다.
 이미지를 회전시키거나, 선대칭, 수평 및 수직 이동 시킴으로써 training data를 늘려줍니다.
 
+## 6. 배치 정규화 :
+배치 정규화는 신경망이 깊어질수록 나타나는 Internal Covariate Shift 문제를 해결하기 위해 나온 기법입니다.
+Internal Covariate Shift는 레이어를 통과할 때마다,
+Covariate Shift가 일어나면서 입력의 분포가 약간식 변하는 현상입니다.
+레이어 마다 정규화 하는 레이어를 두어, 변형된 분포가 나오지 않도록 조절합니다.
+
+미니 배치의 평균과 분산을 이용해서 정규화 한 뒤에,
+scale 및 shift를 감마, 베타를 통해 실행하고, 이는 역전파로 학습시킬 수 있습니다.
+이는 비선형 성질을 유지하면서 학습 될 수 있게 해줍니다.
+
+참고 자료 : https://eehoeskrap.tistory.com/430
