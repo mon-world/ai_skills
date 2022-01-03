@@ -18,16 +18,8 @@ model.add(keras.layers.Flatten())
 model.add(keras.layers.Dense(512, activation='relu'))
 model.add(keras.layers.Dense(128, activation='relu'))
 model.add(keras.layers.Dense(5, activation='softmax'))
-model.summary()
-
-model.compile(optimizer=keras.optimizers.Adam(0.001),
-              loss=keras.losses.sparse_categorical_crossentropy,
-              metrics='acc')
-
-model.fit(flow_train, epochs=10, validation_data=flow_test)
 
 # 2. head model을 따로 설계하고, 모델 완성하기
-
 head_model = conv_base.output
 head_model = tf.keras.layers.Dense(units=1, activation='sigmoid')(head_model)
 model = tf.keras.models.Model(inputs = base_model.input, outputs = head_model)
