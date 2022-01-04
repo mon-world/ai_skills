@@ -23,3 +23,9 @@ model.add(keras.layers.Dense(5, activation='softmax'))
 head_model = conv_base.output
 head_model = tf.keras.layers.Dense(units=1, activation='sigmoid')(head_model)
 model = tf.keras.models.Model(inputs = base_model.input, outputs = head_model)
+
+# 3. 원하는 부분까지 학습시키기 : fine_tune_at 이후 layer를 학습시킨다.
+conv_base.trainable = True
+fine_tune_at = 100
+for layer in conv_base.layers[ 0 : fine_tune_at ] :
+    layer.trainable = False
