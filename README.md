@@ -43,7 +43,7 @@ class로 myCallback을 선언하였고, 그 안에 val_accuracy가 나올떄마�
 ImageDataGenerator.py에는 training data가 부족하거나, 늘리고 싶을 때, 사용하는 기법입니다.
 이미지를 회전시키거나, 선대칭, 수평 및 수직 이동 시킴으로써 training data를 늘려줍니다.
 
-## 6. 배치 정규화 :
+## 6. 배치 정규화 : batch_normalization.py
 배치 정규화는 신경망이 깊어질수록 나타나는 Internal Covariate Shift 문제를 해결하기 위해 나온 기법입니다.
 Internal Covariate Shift는 레이어를 통과할 때마다,
 Covariate Shift가 일어나면서 입력의 분포가 약간식 변하는 현상입니다.
@@ -54,3 +54,14 @@ scale 및 shift를 감마, 베타를 통해 실행하고, 이는 역전파로 �
 이는 비선형 성질을 유지하면서 학습 될 수 있게 해줍니다.
 
 참고 자료 : https://eehoeskrap.tistory.com/430
+
+## 7. 기학습된 모델 사용하기 : fine_tuning.py
+기학습된 모델은 데이터 학습시간을 줄이기 위해 사용합니다.
+
+모델은 크게 필터인 CNN과 분류인 FCN으로 이루어져 있습니다.
+CNN 부분을 base model 이라고 하며, FCN 부분을 head model 이라고 합니다.
+기학습된 base model을 사용하면(trainalbe = False) 변화시킬 weight가 head model의 그것 뿐입니다.
+따라서 학습시간을 줄일 수 있고, 빠르게 원하는 목표치에 도달할 수 있습니다.
+
+이 파일에선 학습된 모델에 이어서 모델을 작성하는 방법과,
+head model을 생성해서 model로 붙히는 방식 2가지를 소개했습니다.
