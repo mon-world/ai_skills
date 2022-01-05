@@ -65,3 +65,6 @@ CNN 부분을 base model 이라고 하며, FCN 부분을 head model 이라고 �
 
 이 파일에선 학습된 모델에 이어서 모델을 작성하는 방법과,
 head model을 생성해서 model로 붙히는 방식 2가지를 소개했습니다.
+
+또한, base model의 원하는 부분까지 기학습된 weight 값을 가져오고,
+나머지 layer를 학습시키는 코드를 넣었습니다.
