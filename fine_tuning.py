@@ -4,12 +4,13 @@ pre-trained된 모델을 사용하면, 학습시간을 줄이고 정확도를 �
 CNN 부분을 base model 이라고 하고, 분류 부분을 head model이라 하며,
 base model의 모델과 weight를 가져오고, head model은 설계해준다.
 
-이 파일에서 base model명을 conv_base 라고 하였다.
+이 파일에서 base model은 VGG16을 사용하였으며, base model명을 conv_base 라고 하였다.
+
 
 
 '''
 # 1. base model를 부르고, 바로 합치기
-conv_base = keras.applications.VGG16(include_top=False, input_shape=[224, 224, 3])
+conv_base = keras.applications.VGG16(include_top=False, input_shape=[224, 224, 3]) 
 conv_base.trainable = False
 
 model = keras.Sequential()
